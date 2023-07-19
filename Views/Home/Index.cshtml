@@ -1,0 +1,54 @@
+﻿
+<div id="carouselImages" class="carousel slide" data-bs-ride="true">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselImages" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselImages" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/image/library_images.jpg" class="d-block w-100" alt="Carousel image 1">
+        </div>
+        <div class="carousel-item">
+            <img src="~/image/library_img.jfif" class="d-block w-100" alt="Carousel image 2">
+        </div>
+       
+    </div>
+</div>
+
+<div class="text-center">
+    <h1>Pies of the week</h1>
+
+    <div class="actionbutton">
+        <div class="row button-container">
+            <span class="btn btn-light btn-xl mb-3">
+                <a asp-controller="Book" asp-action="AddBook" > Add Book</a>
+                </span>
+        </div>
+        <div class="row button-container">
+            <span class="btn btn-light btn-xl mb-3">
+                <a asp-controller="Customer" asp-action="AddCustomer">Add Customer</a>
+                </span>
+         </div>
+        <div class="row button-container">
+            <span class="btn btn-light btn-xl mb-3">
+                <a asp-controller="Customer" asp-action="List" >View Customers</a>
+            </span>
+        </div>
+        <div class="row button-container">
+            <span class="btn btn-light btn-xl mb-3">
+                <a asp-controller="Book" asp-action="List" >List Available Books</a>
+            </span>
+        </div>
+        <div class="row button-container">
+            <span class="btn btn-light btn-xl mb-3">
+                <a asp-controller="Book" asp-action="ListAll">List All Books</a>
+            </span>
+        </div>
+        <div class="row button-container">
+            <span class="btn btn-light btn-xl mb-3">
+                <a asp-page="/DeleteBook">Delete Available Books</a>
+            </span>
+        </div>
+       </div>
+</div>

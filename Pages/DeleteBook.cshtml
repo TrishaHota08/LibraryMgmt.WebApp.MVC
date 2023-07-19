@@ -1,0 +1,32 @@
+﻿@page "/DeleteBook"
+@model LibraryMgmt.WebApp.MVC.Pages.DeleteBookModel
+@if (TempData.ContainsKey("ErrorMessage"))
+{
+    <div class="alert alert-danger">
+        <strong>Error:</strong> @TempData["ErrorMessage"]
+    </div>
+}
+else
+{
+    <div class="text-center">
+    <h3>Select the book to delete</h3>
+    <div class="actionbutton">
+        <div class="row button-container">
+                <form method="post" role="form">
+
+                    <div class="col-12">
+                        <label asp-for="Book.Title" class="form-label"></label>
+                        <input asp-for="Book.Title" class="form-control my-input" />
+                        <span asp-validation-for="Book.Title" class="text-danger"></span>
+                            <div class="row button-container">
+                                <span class="btn  btn-xl mb-3">
+                                        <input type="submit" class="btn btn-secondary" value="Delete Book" />
+                                </span>
+                             </div>
+                    </div>
+                   </form>
+            </div>
+        </div>
+        </div>
+}
+

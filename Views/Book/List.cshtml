@@ -1,0 +1,28 @@
+﻿@model BooksModel
+
+@if (Model.Books?.Count() == 0)
+{
+    <h1>No books available.</h1>
+}
+else
+{
+<table class="table ">
+    <thead>
+        <tr>
+            <th>Book Title</th>
+            <th>Book Availability</th>
+            <th>Book Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model.Books)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.BookStatus</td>
+                <td>@book.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
+}

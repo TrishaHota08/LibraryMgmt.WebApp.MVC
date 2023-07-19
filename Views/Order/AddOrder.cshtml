@@ -1,0 +1,53 @@
+﻿@model NewOrderDTO_client
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">
+        <strong>Error:</strong> @ViewBag.ErrorMessage
+    </div>
+}
+
+<form asp-action="AddOrder" method="post" role="form">
+<h3 class="my-5">
+    Please the details for the new customer.
+</h3>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+<div class="col-6">
+    <div class="row g-2">
+            <div class="col-12">
+                <label asp-for="StaffId" class="form-label"></label>
+                <input asp-for="StaffId" inputmode="numeric" pattern="[0-9]*" class="form-control my-input" />
+                <span asp-validation-for="StaffId" class="text-danger"></span>
+            </div>
+
+            <div class="col-12">
+                <label asp-for="CustomerPhoneNumber" class="form-label"></label>
+                <input asp-for="CustomerPhoneNumber" class="form-control my-input" />
+                <span asp-validation-for="CustomerPhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="col-12">
+                <label asp-for="BookName" class="form-label"></label>
+                <select asp-for="BookName" class="form-control">
+                    <vc:book-list></vc:book-list>
+                </select>
+                <span asp-validation-for="BookName" class="text-danger"></span>
+            </div>
+            <div class="col-12">
+                <label asp-for="IssuedDate" class="form-label"></label>
+                <input asp-for="IssuedDate" type="date" class="form-control my-input" />
+                <span asp-validation-for="IssuedDate" class="text-danger"></span>
+            </div>
+            <div class="col-12">
+                <label asp-for="DueDate" class="form-label"></label>
+                <input asp-for="DueDate" type="date" class="form-control my-input" />
+                <span asp-validation-for="DueDate" class="text-danger"></span>
+            </div>
+            <div class="mt-2">
+                <div class="col-md-offset-2 col-md-5">
+                    <input type="submit" class="btn btn-primary" value="Place Order" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

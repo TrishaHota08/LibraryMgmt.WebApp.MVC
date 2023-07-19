@@ -1,0 +1,38 @@
+﻿@model BookDTO_client
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">
+        <strong>Error:</strong> @ViewBag.ErrorMessage
+    </div>
+}
+<form asp-action="AddBook" method="post" role="form">
+<h3 class="my-5">
+    Please the details for the new book.
+</h3>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+<div class="col-6">
+    <div class="row g-2">
+        <div class="col-12">
+            <label asp-for="Title" class="form-label"></label>
+                <input asp-for="Title" class="form-control my-input" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+            <div class="col-12">
+                <label asp-for="BookStatus" class="form-label"></label>
+                <input asp-for="BookStatus" class="form-control my-input" type="text" value="Available" readonly />
+                <span asp-validation-for="BookStatus" class="text-danger"></span>
+            </div>
+            <div class="col-12">
+                <label asp-for="Price" class="form-label"></label>
+                <input asp-for="Price" class="form-control my-input" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+        <div class="mt-2">
+            <div class="col-md-offset-2 col-md-5">
+                <input type="submit" class="btn btn-primary" value="Add Book" />
+            </div>
+        </div>
+         </div>
+         </div>
+</form>

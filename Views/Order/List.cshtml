@@ -1,0 +1,33 @@
+﻿@model OrdersViewModel
+@if (Model.Orders.Count() == 0)
+{
+    <h1>No orders available.</h1>
+}
+else
+{
+<table class="table ">
+    <thead>
+        <tr>
+            <th>Order Id</th>
+            <th>Book Name</th>
+            <th>Customer Name</th>
+            <th>Customer Phone</th>
+            <th>Issued Date</th>
+            <th>Due Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model.Orders)
+        {
+            <tr>
+                <td>@order.OrderId</td>
+                <td>@order.BookName</td>
+                <td>@order.CustomerName</td>
+                <td>@order.CustomerPhoneNumber</td>
+                 <td>@order.IssuedDate.ToString("dd/MM/yyyy")</td>
+                 <td>@order.DueDate.ToString("dd/MM/yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
