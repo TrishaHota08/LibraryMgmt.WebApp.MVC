@@ -66,7 +66,7 @@ Libraries used:
 2. AutoMapper.Extensions.Microsoft.DependencyInjection"
 
 Prerequisite:
-## The 'LibraryMgmt.WebAPI' project and this WebApp project should be under same parent directory due to the project reference path dependency.
+## Once loaded this project, we need to update the project reference for the 'LibraryMgmt.EFCore.Service' project.
 1. The database: LibDB_final is created using the migration tool of EF core.
 2.The database tables are seeded with the initial data.
 3.The 'LibraryMgmt.WebAPI' project is built and up and running in "http://localhost:5191".
@@ -74,9 +74,16 @@ NOTE: In case, the WebAPI project is running is a different port, update the sam
 
 Steps To Setup:
 1. Once all the above prerequisties are confirmed, build the 'LibraryMgmt.WebApp.MVC' project.
-2. On build successful, check the appUrl for the project under launchSettings.json and make sure the application WILLNOT be hosted (both on IIS server and built in server) on the same port as the WebAPI.
-3.Once confirmed, run the application.
-4.On the login page being up, enter the credentials:
+2. Open the 'LibraryMgmt.WebApp.MVC' file, under the Reference tag with value 'LibraryMgmt.EFCore.Service' update the HintPath with the path of the 'LibraryMgmt.WebAPI.Solution' repos clone path in below shown manner:
+<location of the repo clone>\LibraryMgmt.WebAPI.Solution\LibraryMgmt.EFCore.Service\bin\Debug\net6.0\LibraryMgmt.EFCore.Service.dll
+for example, 
+if my repo is cloned in the location: 'C:\Users\admin\source\Repos\'
+then my hint path will be: C:\Users\admin\source\Repos\LibraryMgmt.WebAPI.Solution\LibraryMgmt.EFCore.Service\bin\Debug\net6.0\LibraryMgmt.EFCore.Service.dll
+
+4. Once done, build the solution.
+5. On build successful, check the appUrl for the project under launchSettings.json and make sure the application WILLNOT be hosted (both on IIS server and built in server) on the same port as the WebAPI.
+6.Once confirmed, run the application.
+7.On the login page being up, enter the credentials:
 email: admin@libraryuae.com
 password: admin123
 (In case you want to use any other user credential, please refer the table provided in my WEB API project README file for all the existing staff tables.
