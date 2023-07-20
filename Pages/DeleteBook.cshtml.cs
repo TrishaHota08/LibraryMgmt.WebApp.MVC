@@ -29,10 +29,6 @@ namespace LibraryMgmt.WebApp.MVC.Pages
         {
             try
             {
-                if (!ModelState.IsValid)
-                {
-                    return Page();
-                }
                 var response = await _apiClient.DeleteAsync("/api/Book?bookName=", Book.Title);
                     if (response == HttpStatusCode.OK)
                     {

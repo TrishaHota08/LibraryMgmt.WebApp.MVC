@@ -1,7 +1,9 @@
 LibraryMgmt.WebApp.MVC Project - README
 Welcome to the README file for my 'LibraryMgmt.WebApp.MVC' project! This web application is designed to manage a library system and includes various functionalities to handle books, customers, and orders. The project follows the Model-View-Controller (MVC) architectural pattern to ensure separation of concerns and maintainability.
 
-Assumption made: this tool will be used by the library staffs for CRUD operations for Books, Customers, Orders.
+Assumption made: 
+1. this tool will be used by the library staffs for CRUD operations for Books, Customers, Orders.
+2. The logo is alos a button to navigate to Home page.
 
 Functionalities
 Add Book: This functionality allows users to add new books to the library catalog.

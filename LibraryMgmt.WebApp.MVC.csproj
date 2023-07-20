@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <Reference Include="LibraryMgmt.EFCore.Service">
-		<HintPath>..\Library_WebAPI\LibraryMgmt.EFCore.Service\bin\Debug\net6.0\LibraryMgmt.EFCore.Service.dll</HintPath>
+		<HintPath>C:\Users\admin\source\Repos\LibraryMgmt.WebAPI.Solution\Library_WebAPI\bin\Debug\net6.0\LibraryMgmt.EFCore.Service.dll</HintPath>
     </Reference>
   </ItemGroup>
 
